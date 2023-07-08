@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/main.html">main</a></li>
+  <li><strong>mover</strong></li>
+  <li><a href="../modules/cards.html">cards</a></li>
+  <li><a href="../modules/stacks.html">stacks</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>mover</code></h1>
+<p>Class for queuing cards moves</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#move.new">move.new (obj, targetPos, vel)</a></td>
+	<td class="summary">Create new move</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#move.advance">move.advance (dt)</a></td>
+	<td class="summary">Progress animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#turn.new">turn.new (obj, vel)</a></td>
+	<td class="summary">Create new turn</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#turn.advance">turn.advance (dt)</a></td>
+	<td class="summary">Progress animation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#new">new (moveSpeed, turnSpeed)</a></td>
+	<td class="summary">Create new mover</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#addMove">addMove (obj, targetPos)</a></td>
+	<td class="summary">Add move to the queue</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#addTurn">addTurn (obj)</a></td>
+	<td class="summary">Add turn to the queue</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nq">nq ()</a></td>
+	<td class="summary">Enqueue moves</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#reset">reset ()</a></td>
+	<td class="summary">Reset the queue</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#done">done ()</a></td>
+	<td class="summary">Are all moves done?</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#advance">advance (dt)</a></td>
+	<td class="summary">Advance moves and remove completed moves from the queue</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Q">Q</a></td>
+	<td class="summary">Queue of tables of moves</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "move.new"></a>
+    <strong>move.new (obj, targetPos, vel)</strong>
+    </dt>
+    <dd>
+    Create new move
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">obj</span>
+         Object to move
+        </li>
+        <li><span class="parameter">targetPos</span>
+         Target position to move
+        </li>
+        <li><span class="parameter">vel</span>
+         Movement velocity
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">move</span></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "move.advance"></a>
+    <strong>move.advance (dt)</strong>
+    </dt>
+    <dd>
+    Progress animation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Time between frames
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "turn.new"></a>
+    <strong>turn.new (obj, vel)</strong>
+    </dt>
+    <dd>
+    Create new turn
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">obj</span>
+         Object to turn
+        </li>
+        <li><span class="parameter">vel</span>
+         Turning speed
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">turn</span></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "turn.advance"></a>
+    <strong>turn.advance (dt)</strong>
+    </dt>
+    <dd>
+    Progress animation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Time between frames
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "new"></a>
+    <strong>new (moveSpeed, turnSpeed)</strong>
+    </dt>
+    <dd>
+    Create new mover
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">moveSpeed</span>
+         Movement velocity
+        </li>
+        <li><span class="parameter">turnSpeed</span>
+         Turning speed
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">mover</span></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "addMove"></a>
+    <strong>addMove (obj, targetPos)</strong>
+    </dt>
+    <dd>
+    Add move to the queue
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">obj</span>
+         Object to move
+        </li>
+        <li><span class="parameter">targetPos</span>
+         Target position to move
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "addTurn"></a>
+    <strong>addTurn (obj)</strong>
+    </dt>
+    <dd>
+    Add turn to the queue
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">obj</span>
+         Object to turn
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "nq"></a>
+    <strong>nq ()</strong>
+    </dt>
+    <dd>
+    Enqueue moves
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "reset"></a>
+    <strong>reset ()</strong>
+    </dt>
+    <dd>
+    Reset the queue
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "done"></a>
+    <strong>done ()</strong>
+    </dt>
+    <dd>
+    Are all moves done?
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "advance"></a>
+    <strong>advance (dt)</strong>
+    </dt>
+    <dd>
+    Advance moves and remove completed moves from the queue
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+         Time between frames
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Q"></a>
+    <strong>Q</strong>
+    </dt>
+    <dd>
+    Queue of tables of moves
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

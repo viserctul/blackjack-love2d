@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/main.html">main</a></li>
+  <li><a href="../modules/mover.html">mover</a></li>
+  <li><a href="../modules/cards.html">cards</a></li>
+  <li><strong>stacks</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>stacks</code></h1>
+<p>Class for simulating hands of cards</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#new">new (pos, deckPos, cards, mover)</a></td>
+	<td class="summary">Create new stack of cards</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#add">add (card)</a></td>
+	<td class="summary">Add a card to the stack of cards</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#take">take (card)</a></td>
+	<td class="summary">Draw a card from the deck of cards</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#takeHidden">takeHidden (card)</a></td>
+	<td class="summary">Draw a card from the deck of cards in hidden position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#takeHiddenReveal">takeHiddenReveal (card)</a></td>
+	<td class="summary">Draw a card from the deck of cards in hidden position, then reveal</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pop">pop ()</a></td>
+	<td class="summary">Pop a crd from the stack of cards</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#reveal">reveal ()</a></td>
+	<td class="summary">Reveal all hidden cards in the stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discard">discard ()</a></td>
+	<td class="summary">Discard cards in the stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#draw">draw ()</a></td>
+	<td class="summary">Render all cards</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#value">value ()</a></td>
+	<td class="summary">Compute hand value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#blackjack">blackjack ()</a></td>
+	<td class="summary">Is blackjack?</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#stack">stack</a></td>
+	<td class="summary">Table of cards in current stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#discarded">discarded</a></td>
+	<td class="summary">Table of cards in discarded stack.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "new"></a>
+    <strong>new (pos, deckPos, cards, mover)</strong>
+    </dt>
+    <dd>
+    Create new stack of cards
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pos</span>
+         Position of the new stack
+        </li>
+        <li><span class="parameter">deckPos</span>
+         Position of the deck of cards
+        </li>
+        <li><span class="parameter">cards</span>
+         Deck of cards to take cards from
+        </li>
+        <li><span class="parameter">mover</span>
+         Mover to use for moving the cards
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../modules/stacks.html#stack">stack</a></span>
+        New stack
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "add"></a>
+    <strong>add (card)</strong>
+    </dt>
+    <dd>
+    Add a card to the stack of cards
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">card</span>
+         Card to add to the stack of cards
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">card</span></span>
+        Card added to the stack of cards
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "take"></a>
+    <strong>take (card)</strong>
+    </dt>
+    <dd>
+    Draw a card from the deck of cards
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">card</span>
+         If specified, take this card instead of a new one from the deck
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">card</span></span>
+        Card added to the stack of cards
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "takeHidden"></a>
+    <strong>takeHidden (card)</strong>
+    </dt>
+    <dd>
+    Draw a card from the deck of cards in hidden position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">card</span>
+         If specified, take this card instead of a new one from the deck
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">card</span></span>
+        Card added to the stack of cards
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "takeHiddenReveal"></a>
+    <strong>takeHiddenReveal (card)</strong>
+    </dt>
+    <dd>
+    Draw a card from the deck of cards in hidden position, then reveal
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">card</span>
+         If specified, take this card instead of a new one from the deck
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">card</span></span>
+        Card added to the stack of cards
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pop"></a>
+    <strong>pop ()</strong>
+    </dt>
+    <dd>
+    Pop a crd from the stack of cards
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">card</span></span>
+        Popped card
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "reveal"></a>
+    <strong>reveal ()</strong>
+    </dt>
+    <dd>
+    Reveal all hidden cards in the stack
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discard"></a>
+    <strong>discard ()</strong>
+    </dt>
+    <dd>
+    Discard cards in the stack
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "draw"></a>
+    <strong>draw ()</strong>
+    </dt>
+    <dd>
+    Render all cards
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "value"></a>
+    <strong>value ()</strong>
+    </dt>
+    <dd>
+    Compute hand value
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">int</span></span>
+        Hand value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "blackjack"></a>
+    <strong>blackjack ()</strong>
+    </dt>
+    <dd>
+    Is blackjack?
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "stack"></a>
+    <strong>stack</strong>
+    </dt>
+    <dd>
+    Table of cards in current stack
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "discarded"></a>
+    <strong>discarded</strong>
+    </dt>
+    <dd>
+    Table of cards in discarded stack.
+ Needed in order to correctly render cards that are being discarded.
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 1980-01-01 00:00:00 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
